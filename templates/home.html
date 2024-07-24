@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteens</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.category-link {
+    text-decoration: none;
+    color: inherit;
+}
+.category {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
+    padding: 25px;
+    transition: transform 0.2s;
+}
+
+.category img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.category h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2em;
+}
+
+.category p {
+    color: #666;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+    </style>
 </head>
 <body>
-In home page
+    <div class="category-container">
+        <a href="category-d.html" class="category-link">
+        <div class="category">
+            <img src="https://media.istockphoto.com/id/1411322814/photo/happy-women-eating-at-a-buffet-style-cafeteria.jpg?s=612x612&w=0&k=20&c=YXK6DGEct3j4ckVGH4I5Bh9TCv86gQDPR1otiCXQMA4=" alt="Motorcycles">
+            <h3>Adda</h3>
+            <p>Location: C block ground floor</p>
+        </div>
+        </a>
+        <a href="category-d.html" class="category-link">
+        <div class="category">
+            <img src="https://live.staticflickr.com/6072/6063329518_092e29f1fa_b.jpg" alt="Cars and ATVs">
+            <h3>Rice and spice</h3>
+            <p>Location: E block </p>
+        </div>
+        </a>
+        <a href="category-d.html" class="category-link">
+        <div class="category">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5tRIT7KyZ-RAlD4_JsIx1h-9TNNFGAKHQA&s" alt="Buses">
+            <h3>Chocotale room</h3>
+            <p>Location: F block ground </p>
+        </div>
+        </a>
+        <a href="category-d.html" class="category-link">
+        <div class="category">
+            <img src="https://cdn.prod.website-files.com/62e628ccdd3aacd9841de18b/62ead78b6f662a4cb7295ab6_Carousel%3ACanteen.jpg" alt="Tractors and SMV">
+            <h3>Naturals</h3>
+            <p>Loction: C block 3rd floor</p>
+        </div>
+        </a>
+    </div>
 </body>
 </html>
