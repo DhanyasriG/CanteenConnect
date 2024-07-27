@@ -55,12 +55,52 @@
 .category:hover {
     transform: translateY(-5px);
 }
+ .navbar {
+            width: 99%;
 
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position:fixed;
+            top:30px;
+            left:0;
+            z-index:1000;
+        }
+        .typewriter {
+        font-size: clamp(1rem, 3vw + 1rem, 2.5rem);
+        font-family: "Poppins", monospace;
+        color: #000;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .typewriter-text {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typewriter 5s steps(24) 1s forwards;
+      }
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
     </style>
 </head>
 <body>
+
+ <nav class="navbar" >
+     <marquee style="font-size: 1.2em;" scrollamount="15"><mark>Disclaimer: Each cafeteria has its own cart, allowing orders only from that cafeteria to ensure you cannot order from multiple cafeterias simultaneously.</mark></marquee>
+<br>
+ </nav>
     <div class="category-container">
-        <a href="category-d.html" class="category-link">
+        <a href="{% url 'adda_list' %}" class="category-link">
         <div class="category">
             <img src="https://media.istockphoto.com/id/1411322814/photo/happy-women-eating-at-a-buffet-style-cafeteria.jpg?s=612x612&w=0&k=20&c=YXK6DGEct3j4ckVGH4I5Bh9TCv86gQDPR1otiCXQMA4=" alt="Motorcycles">
             <h3>Adda</h3>
@@ -71,7 +111,7 @@
         <div class="category">
             <img src="https://live.staticflickr.com/6072/6063329518_092e29f1fa_b.jpg" alt="Cars and ATVs">
             <h3>Rice and spice</h3>
-            <p>Location: E block </p>
+            <p>Location: E block ground floor</p>
         </div>
         </a>
         <a href="category-d.html" class="category-link">
@@ -81,7 +121,7 @@
             <p>Location: F block ground </p>
         </div>
         </a>
-        <a href="category-d.html" class="category-link">
+        <a href="{% url 'naturals_list' %}" class="category-link">
         <div class="category">
             <img src="https://cdn.prod.website-files.com/62e628ccdd3aacd9841de18b/62ead78b6f662a4cb7295ab6_Carousel%3ACanteen.jpg" alt="Tractors and SMV">
             <h3>Naturals</h3>
