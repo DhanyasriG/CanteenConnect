@@ -21,6 +21,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+
 }
 .category-link {
     text-decoration: none;
@@ -29,12 +30,18 @@
 .category {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(130, 20, 25, 0.5);
     text-align: center;
     width: 250px;
     padding: 25px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(130, 20, 25, 0.5); /* Enhanced shadow on hover */
+}
+
 
 .category img {
     width: 100%;
@@ -52,9 +59,7 @@
     color: #666;
 }
 
-.category:hover {
-    transform: translateY(-5px);
-}
+
  .navbar {
             width: 99%;
 
@@ -91,15 +96,79 @@
           width: 100%;
         }
       }
+
+      .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    padding: 10px; /* Adds some padding around the navbar */
+
+}
+
+.navbar {
+            width: 99%;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar .navbar-brand {
+            color: black;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .navbar .navbar-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-search input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #a51c1e; /* Add a black border */
+            color: black;
+        }
+
+        .navbar .navbar-search button {
+            padding: 5px 10px;
+            background-color: white;
+            border: 1px solid #a51c1e; /* Add a black border */
+            color: black
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .navbar .cart-icon {
+            color: black;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
- <nav class="navbar" >
-     <marquee style="font-size: 1.2em;" scrollamount="15"><mark>Disclaimer: Each cafeteria has its own cart, allowing orders only from that cafeteria to ensure you cannot order from multiple cafeterias simultaneously.</mark></marquee>
-<br>
- </nav>
+ <nav class="navbar">
+        <a href="{% url 'home' %}" class="navbar-brand">
+    <img src="https://www.kluniversity.in/images/klulogo3.png" alt="Home" style="width: 140px;">
+</a>
+        <div class="navbar-search">
+            <form action="{% url 'login' %}" method="get">
+                <button type="submit" style=" padding: 5px 10px;
+            background-color: white; border-radius: 5px;border: 1px solid #a51c1e;">Logout</button>
+            </form>
+        </div>
+
+    </nav>
     <div class="category-container">
+        <marquee style="font-size: 1.2em; color: #a51c1e;" scrollamount="15" color="#a51c1e">Disclaimer: Each cafeteria has its own cart, allowing orders only
+            from that cafeteria to ensure you cannot order from multiple cafeterias simultaneously.</marquee>
         <a href="{% url 'adda_list' %}" class="category-link">
         <div class="category">
             <img src="https://media.istockphoto.com/id/1411322814/photo/happy-women-eating-at-a-buffet-style-cafeteria.jpg?s=612x612&w=0&k=20&c=YXK6DGEct3j4ckVGH4I5Bh9TCv86gQDPR1otiCXQMA4=" alt="Motorcycles">
@@ -107,14 +176,14 @@
             <p>Location: C block ground floor</p>
         </div>
         </a>
-        <a href="category-d.html" class="category-link">
+        <a href="{% url 'ras_list' %}" class="category-link">
         <div class="category">
             <img src="https://live.staticflickr.com/6072/6063329518_092e29f1fa_b.jpg" alt="Cars and ATVs">
             <h3>Rice and spice</h3>
             <p>Location: E block ground floor</p>
         </div>
         </a>
-        <a href="category-d.html" class="category-link">
+        <a href="{% url 'us_list' %}" class="category-link">
         <div class="category">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5tRIT7KyZ-RAlD4_JsIx1h-9TNNFGAKHQA&s" alt="Buses">
             <h3>Chocotale room</h3>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins";
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(165, 28, 30, 0.3);
+      width: 400px;
+      padding: 20px;
+    }
+
+    .login-box form {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color:  #a51c1e; /* Blue color */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .error-message {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .error-message h3 {
+      color: red;
+    }
+
+    .input-box {
+      position: relative;
+      margin: 25px 0;
+    }
+
+    .input-box input {
+      width: 100%;
+      height: 50px;
+      background: transparent;
+      border: 2px solid #a51c1e; /* Blue color */
+      outline: none;
+      border-radius: 40px;
+      font-size: 1em;
+      color: black;
+      padding: 0 20px;
+      transition: 0.5s;
+    }
+
+    .input-box input:focus,
+    .input-box input:valid {
+      border-color:  #a51c1e; /* Blue color */
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: black;
+      pointer-events: none;
+      transition: 0.5s ease;
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label {
+      top: 1px;
+      font-size: 0.8em;
+      background-color: #a51c1e; /* Blue color */
+      padding: 0 6px;
+      color: white;
+    }
+
+    .forgot-password {
+      margin: -15px 0 10px;
+      text-align: center;
+    }
+
+    .forgot-password a {
+      font-size: 0.85em;
+      color:#a51c1e; /* Blue color */
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      width: 100%;
+      height: 45px;
+      border-radius: 45px;
+      background:  #a51c1e; /* Blue color */
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1em;
+      color: white;
+      font-weight: 600;
+    }
+
+    .signup-link {
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .signup-link a {
+      font-size: 1em;
+      color:  #a51c1e; /* Blue color */
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 140px;
+      }
+  </style>
+
+  <body>
+
+<img src="https://www.kluniversity.in/images/klulogo3.png" alt="Home" class="logo">
+    <div class="card">
+      {% if msg is not None %}
+        <h3 align="center" style="color:red">{{msg}}</h3>
+      {% endif %}
+      <h2>Login</h2>
+
+      <form method="post" action="{% url 'rchecklogin' %}">
+        {% csrf_token %}
+        <div class="input-box">
+          <input type="text" name="remail" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" name="rpwd" required>
+          <label>Password</label>
+        </div>
+        <button type="submit" class="btn">Login</button><br><br>
+        <div class="forgot-password">
+          <a href="{% url 'resetpwd' %}">Reset password</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

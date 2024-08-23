@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Payment Successful!</h1>
+<p>Thank you for your purchase. Here are the items you bought:</p>
+<ul>
+    {% for item in payment.items.all %}
+        <li>{{ item.item.name }} - Quantity: {{ item.quantity }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
